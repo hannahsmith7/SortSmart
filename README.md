@@ -1,0 +1,44 @@
+# SortSmart: Book Sorting Application
+
+SortSmart assists users in learning and practicing book sorting based on the Dewey Decimal System. With an interactive interface, users can drag and drop books to reorder them and verify their sorting skills.
+
+## Table of Contents
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Running the Application](#running-the-application)
+- [Usage](#usage)
+- [Contact](#contact)
+
+## Getting Started
+These instructions will guide you on how to get a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+1. **Visual Studio** - Preferably Visual Studio 2019 or later. You can download it from the official Visual Studio website.
+2. **.NET Framework 4.7.2** or later should be installed. You can download it from Microsoft's official site.
+
+### Installation
+1. Clone the repository to your local machine using the following command:
+git clone https://github.com/hannahsmith7/SortSmart.git
+2. Navigate to the project directory:
+cd SortSmart
+3. Open the solution file (`SortSmart.sln`) in Visual Studio.
+4. Restore any missing NuGet packages. In Visual Studio, right-click on the solution in the Solution Explorer and select "Restore NuGet Packages".
+5. Build the solution either by pressing `CTRL + SHIFT + B` or via the menu: `Build > Build Solution`.
+
+## Running the Application
+1. Ensure the main project (probably named `SortSmart`) is set as the startup project in Visual Studio. If not, right-click on it in the Solution Explorer and select "Set as Startup Project".
+2. Press `F5` or click the "Start" button in Visual Studio to run the application.
+
+## Usage
+1. On launch, choose from the available tasks.
+2. For the "Replacing Books" task, you'll see a list of call numbers representing books.
+3. Drag and drop these call numbers to reorder them.
+4. Use the "Check Order" button to verify the order.
+5. The "Shuffle Books" button shuffles the order of books.
+6. A progress bar indicates your correctness level in ordering the books.
+
+## Contact
+- **Student:** Hannah Smith
+- **Git Repository:** [SortSmart on GitHub](https://github.com/hannahsmith7/SortSmart.git)
+
