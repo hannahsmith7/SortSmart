@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static SortSmart.View_Models.ReplacingBooksViewModel;
+using static SortSmart.ViewModels.ReplacingBooksViewModel;
 using SortSmart.Views;
 using System.Windows.Input;
 
@@ -14,6 +14,7 @@ namespace SortSmart.ViewModels
     internal class MainViewModel : INotifyPropertyChanged
 
     {
+
         //----------------------------------------------------------------------------------------------------------------------//
         // The PropertyChanged event is used to notify that a property changed and the UI should update.
         public event PropertyChangedEventHandler PropertyChanged;
@@ -23,6 +24,8 @@ namespace SortSmart.ViewModels
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+
 
         //----------------------------------------------------------------------------------------------------------------------//
         // The _currentView private field stores the current user control being shown in the main window.
@@ -43,6 +46,8 @@ namespace SortSmart.ViewModels
         // This command will be bound to a button or menu item in the UI to show the "Replacing Books" view.
         public ICommand ShowReplacingBooksCommand { get; private set; }
 
+        public ICommand ShowIdentifyingAreasCommand { get; private set; }
+
         //----------------------------------------------------------------------------------------------------------------------//
 
         // MainViewModel constructor. Initializes the required commands and other setup.
@@ -51,6 +56,8 @@ namespace SortSmart.ViewModels
             // Initialize the command
             // Link the ShowReplacingBooksCommand to the ShowReplacingBooks method.
             ShowReplacingBooksCommand = new RelayCommand(ShowReplacingBooks);
+
+            ShowIdentifyingAreasCommand = new RelayCommand(ShowIdentifyingAreas);
         }
         //----------------------------------------------------------------------------------------------------------------------//
         // This method sets the current view to the "Replacing Books" user control.
@@ -58,6 +65,12 @@ namespace SortSmart.ViewModels
         {
             CurrentView = new ReplacingBooksUserControl();
         }
+        //----------------------------------------------------------------------------------------------------------------------//
+        private void ShowIdentifyingAreas()
+        {
+            CurrentView = new IdentifyingAreasUserControl();
+        }
+
         //----------------------------------------------------------------------------------------------------------------------//
     }
 }

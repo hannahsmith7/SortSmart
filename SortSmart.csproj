@@ -57,8 +57,12 @@
     </ApplicationDefinition>
     <Compile Include="Models\BookModel.cs" />
     <Compile Include="Models\CallNumber.cs" />
+    <Compile Include="ViewModels\IdentifyingAreasViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\ReplacingBooksViewModel.cs" />
+    <Compile Include="Views\IdentifyingAreasUserControl.xaml.cs">
+      <DependentUpon>IdentifyingAreasUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ReplacingBooksUserControl.xaml.cs">
       <DependentUpon>ReplacingBooksUserControl.xaml</DependentUpon>
     </Compile>
@@ -74,6 +78,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\IdentifyingAreasUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ReplacingBooksUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

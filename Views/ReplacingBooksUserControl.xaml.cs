@@ -1,6 +1,6 @@
 ﻿using SortSmart;
 using SortSmart.Models;
-using SortSmart.View_Models;
+using SortSmart.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

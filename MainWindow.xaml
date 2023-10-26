@@ -14,37 +14,37 @@
 
     <!-- Set the background to an image of books -->
     <Window.Background>
-        <ImageBrush ImageSource="C:\Users\27835\source\repos\SortSmart\Images\PROG_Background.jpg" Opacity="1"/>
+        <ImageBrush ImageSource="\Images\PROG_Background.jpg" Opacity="1"/>
     </Window.Background>
 
     <Grid>
         <!-- Setting up the layout for buttons -->
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="20"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="250"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
-        <!-- Button for Replacing Books -->
-        <Button Content="Replacing Books" Command="{Binding ShowReplacingBooksCommand}" Grid.Row="1" Grid.Column="1" Height="50" IsDefault="True"/>
+            <!-- Button for Replacing Books -->
+            <Button Content="Replacing Books" Command="{Binding ShowReplacingBooksCommand}" Grid.Column="0" Width="200" Height="50" IsDefault="True"/>
 
-        <!-- Button for Identifying Areas -->
-        <Button Content="Identifying Areas" Grid.Row="3" Grid.Column="1" Height="50" IsEnabled="False"/>
+            <!-- Button for Identifying Areas -->
+            <Button Content="Identifying Areas" Command="{Binding ShowIdentifyingAreasCommand}" Grid.Column="1" Width="200" Height="50" IsDefault="True"/>
 
-        <!-- Button for Finding Call Numbers -->
-        <Button Content="Finding Call Numbers" Grid.Row="5" Grid.Column="1" Height="50" IsEnabled="False"/>
+            <!-- Button for Finding Call Numbers -->
+            <Button Content="Finding Call Numbers" Grid.Column="2" Width="200" Height="50" IsEnabled="False"/>
 
-        <ContentControl HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="{Binding CurrentView}" Grid.ColumnSpan="3" Grid.RowSpan="7" />
+        </Grid>
+
+     
+        <ContentControl HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="{Binding CurrentView}" Grid.Row="2" />
 
     </Grid>
     

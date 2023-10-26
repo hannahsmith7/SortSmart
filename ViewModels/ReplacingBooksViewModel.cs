@@ -11,7 +11,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Markup;
 
-namespace SortSmart.View_Models
+namespace SortSmart.ViewModels
 {
     // The ReplacingBooksViewModel manages the functionality of the "Replacing Books" feature.
     internal class ReplacingBooksViewModel : INotifyPropertyChanged
@@ -67,18 +67,26 @@ namespace SortSmart.View_Models
             // Link commands to their respective action methods.
             CheckOrderCommand = new RelayCommand(CheckOrder);
             ShuffleBooksCommand = new RelayCommand(ShuffleBooks);
+
         }
+
         //----------------------------------------------------------------------------------------------------------------------//
-  
         // Populates the CallNumbers list with 10 random call numbers for demonstration.
         private void GenerateRandomCallNumbers()
         {
-            var random = new Random();
-            for (int i = 0; i < 10; i++)
+            try 
             {
-                var numberPart = (random.Next(1, 999) + random.NextDouble()).ToString("0.00");
-                var charPart = ((char)random.Next(65, 91)).ToString() + ((char)random.Next(65, 91)).ToString() + ((char)random.Next(65, 91)).ToString();
-                CallNumbers.Add(numberPart + " " + charPart);
+                var random = new Random();
+                for (int i = 0; i < 10; i++)
+                {
+                    var numberPart = (random.Next(1, 999) + random.NextDouble()).ToString("0.00");
+                    var charPart = ((char)random.Next(65, 91)).ToString() + ((char)random.Next(65, 91)).ToString() + ((char)random.Next(65, 91)).ToString();
+                    CallNumbers.Add(numberPart + " " + charPart);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error! {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
         //-----------------------------------------------------------------------------------------------------------------------------------------------------------//
@@ -87,53 +95,67 @@ namespace SortSmart.View_Models
         // Code done with the help of ChatGPT
         public void ReorderList(string droppedItem, string targetItem)
         {
-            int removedIdx = CallNumbers.IndexOf(droppedItem);
-            int targetIdx = CallNumbers.IndexOf(targetItem);
+            try
+            {
+                int removedIdx = CallNumbers.IndexOf(droppedItem);
+                int targetIdx = CallNumbers.IndexOf(targetItem);
 
-            if (removedIdx < 0 || targetIdx < 0 || removedIdx >= CallNumbers.Count || targetIdx >= CallNumbers.Count) return;
+                if (removedIdx < 0 || targetIdx < 0 || removedIdx >= CallNumbers.Count || targetIdx >= CallNumbers.Count) return;
 
-            CallNumbers.RemoveAt(removedIdx);
+                CallNumbers.RemoveAt(removedIdx);
 
-            if (removedIdx < targetIdx)
-                CallNumbers.Insert(targetIdx, droppedItem);
-            else
-                CallNumbers.Insert(targetIdx, droppedItem);
+                if (removedIdx < targetIdx)
+                    CallNumbers.Insert(targetIdx, droppedItem);
+                else
+                    CallNumbers.Insert(targetIdx, droppedItem);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error! {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
         //----------------------------------------------------------------------------------------------------------------------//
 
         // Command method to check if the call numbers are in the correct order
         private void CheckOrder()
         {
-            // Check if the numeric portion of the call numbers are in ascending order
-            for (int i = 1; i < CallNumbers.Count; i++)
+            try
             {
-                // Extract numeric portion from the current and previous call number
-                double currentNumeric = ExtractNumericPart(CallNumbers[i]);
-                double previousNumeric = ExtractNumericPart(CallNumbers[i - 1]);
-
-                if (previousNumeric > currentNumeric)
+                // Check if the numeric portion of the call numbers are in ascending order
+                for (int i = 1; i < CallNumbers.Count; i++)
                 {
-                    // They are not in order based on the numeric value
-                    MessageBox.Show("The order is incorrect. Please try again.");
-                    return;
+                    // Extract numeric portion from the current and previous call number
+                    double currentNumeric = ExtractNumericPart(CallNumbers[i]);
+                    double previousNumeric = ExtractNumericPart(CallNumbers[i - 1]);
+
+                    if (previousNumeric > currentNumeric)
+                    {
+                        // They are not in order based on the numeric value
+                        MessageBox.Show("The order is incorrect. Please try again.");
+                        return;
+                    }
+                }
+
+                MessageBox.Show("The order is correct. Well done!");
+
+                // If the loop completed without returning early, the order was correct:
+                ProgressValue++; // Increment the progress
+
+                if (ProgressValue >= 10)
+                {
+                    // Reset the progress bar and provide feedback
+                    ProgressValue = 0;
+                    MessageBox.Show("Congratulations! You've mastered this round of book sorting!");
+                }
+                else
+                {
+                    // Provide feedback for correct ordering
+                    MessageBox.Show("Great job! The order is correct.");
                 }
             }
-
-            MessageBox.Show("The order is correct. Well done!");
-
-            // If the loop completed without returning early, the order was correct:
-            ProgressValue++; // Increment the progress
-
-            if (ProgressValue >= 10)
+            catch (Exception ex)
             {
-                // Reset the progress bar and provide feedback
-                ProgressValue = 0;
-                MessageBox.Show("Congratulations! You've mastered this round of book sorting!");
-            }
-            else
-            {
-                // Provide feedback for correct ordering
-                MessageBox.Show("Great job! The order is correct.");
+                MessageBox.Show($"Error! {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
         //----------------------------------------------------------------------------------------------------------------------//
@@ -159,14 +181,22 @@ namespace SortSmart.View_Models
         // Command method to shuffle the call numbers randomly
         private void ShuffleBooks()
         {
-            var random = new Random();
-            var shuffledList = CallNumbers.OrderBy(item => random.Next()).ToList();
-
-            CallNumbers.Clear();
-            foreach (var item in shuffledList)
+            try
             {
-                CallNumbers.Add(item);
+                var random = new Random();
+                var shuffledList = CallNumbers.OrderBy(item => random.Next()).ToList();
+
+                CallNumbers.Clear();
+                foreach (var item in shuffledList)
+                {
+                    CallNumbers.Add(item);
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error! {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
         }
         //----------------------------------------------------------------------------------------------------------------------//
         // RelayCommand is a basic implementation of the ICommand interface
@@ -174,13 +204,29 @@ namespace SortSmart.View_Models
         public class RelayCommand : ICommand
         {
             private readonly Action _execute;
+            private Func<List<Tuple<string, string>>, int> checkAnswers;
+            private Func<string, bool> checkMatch;
+
+#pragma warning disable CS0067 // The event 'ReplacingBooksViewModel.RelayCommand.CanExecuteChanged' is never used
             public event EventHandler CanExecuteChanged;
+#pragma warning restore CS0067 // The event 'ReplacingBooksViewModel.RelayCommand.CanExecuteChanged' is never used
 
             //----------------------------------------------------------------------------------------------------------------------//
             public RelayCommand(Action execute)
             {
                 _execute = execute;
             }
+
+            public RelayCommand(Func<List<Tuple<string, string>>, int> checkAnswers)
+            {
+                this.checkAnswers = checkAnswers;
+            }
+
+            public RelayCommand(Func<string, bool> checkMatch)
+            {
+                this.checkMatch = checkMatch;
+            }
+
             //----------------------------------------------------------------------------------------------------------------------//
             public bool CanExecute(object parameter) => true;
             //----------------------------------------------------------------------------------------------------------------------//
