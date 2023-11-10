@@ -31,12 +31,18 @@ cd SortSmart
 2. Press `F5` or click the "Start" button in Visual Studio to run the application.
 
 ## Usage
-1. On launch, choose from the available tasks.
-2. For the "Replacing Books" task, you'll see a list of call numbers representing books.
-3. Drag and drop these call numbers to reorder them.
-4. Use the "Check Order" button to verify the order.
-5. The "Shuffle Books" button shuffles the order of books.
-6. A progress bar indicates your correctness level in ordering the books.
+1. On launch, choose from the available tasks: "Replacing Books" or "Identifying Areas".
+2. For the "Replacing Books" task:
+   - You'll see a list of call numbers representing books.
+   - Drag and drop these call numbers to reorder them.
+   - Use the "Check Order" button to verify the order.
+   - The "Shuffle Books" button shuffles the order of books.
+   - A progress bar indicates your correctness level in ordering the books.
+3. For the "Identifying Areas" task:
+   - You'll see two columns: one with call numbers and the other with book descriptions.
+   - Match the call numbers with their corresponding descriptions by dragging and dropping.
+   - Each correct match will increment your score, providing instant feedback.
+   - Continue matching until all items are correctly paired.
 
 ## Contact
 - **Student:** Hannah Smith
