@@ -88,7 +88,9 @@ namespace SortSmart.Views
             int oldIndex = rightColumnItems.Items.IndexOf(_draggingItem);
             int newIndex = rightColumnItems.Items.IndexOf(droppedPosition.Content);
 
-            if (targetListView != null && !string.IsNullOrEmpty(droppedData))
+            if (oldIndex == newIndex) return;
+
+            if (targetListView != null && !string.IsNullOrEmpty(droppedData) && droppedPosition != null)
             {
                 // Assuming you have access to your ViewModel here. If not, adjust as needed.
                 var viewModel = DataContext as IdentifyingAreasViewModel;

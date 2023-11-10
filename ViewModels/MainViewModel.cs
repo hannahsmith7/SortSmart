@@ -4,9 +4,10 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static SortSmart.ViewModels.ReplacingBooksViewModel;
+using SortSmart.ViewModels;
 using SortSmart.Views;
 using System.Windows.Input;
+using SortSmart.Commands;
 
 namespace SortSmart.ViewModels
 {
@@ -43,10 +44,11 @@ namespace SortSmart.ViewModels
             }
         }
         //----------------------------------------------------------------------------------------------------------------------//
-        // This command will be bound to a button or menu item in the UI to show the "Replacing Books" view.
+        // This command will be bound to a button or menu item in the UI to show the view.
         public ICommand ShowReplacingBooksCommand { get; private set; }
 
         public ICommand ShowIdentifyingAreasCommand { get; private set; }
+        public ICommand ShowFindingCallNumbersCommand { get; private set; }
 
         //----------------------------------------------------------------------------------------------------------------------//
 
@@ -58,6 +60,8 @@ namespace SortSmart.ViewModels
             ShowReplacingBooksCommand = new RelayCommand(ShowReplacingBooks);
 
             ShowIdentifyingAreasCommand = new RelayCommand(ShowIdentifyingAreas);
+
+            ShowFindingCallNumbersCommand = new RelayCommand(ShowFindingCallNumbers);
         }
         //----------------------------------------------------------------------------------------------------------------------//
         // This method sets the current view to the "Replacing Books" user control.
@@ -72,6 +76,10 @@ namespace SortSmart.ViewModels
         }
 
         //----------------------------------------------------------------------------------------------------------------------//
+        private void ShowFindingCallNumbers()
+        {
+            CurrentView = new FindingCallNumbersUserControl();
+        }
     }
 }
 //---------------------------------------------...ooo000 END OF FILE 000ooo...-------------------------------------------------//

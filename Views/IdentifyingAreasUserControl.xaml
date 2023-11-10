@@ -8,7 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
 
     <UserControl.DataContext>
-        <local:IdentifyingAreasViewModel />
+        <local:IdentifyingAreasViewModel/>
     </UserControl.DataContext>
     
     <Grid>
@@ -23,23 +23,44 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Row="0"  Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" Background="White">
+        <StackPanel Grid.Row="0"  Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" Background="#E0F7EF">
             <TextBlock Text="Score: " FontWeight="Bold" FontSize="16"/>
             <TextBlock Text="{Binding Score}" FontSize="16" Margin="5,0"/>
-            <TextBlock Text="{Binding Feedback}" Foreground="Red" FontSize="18" Margin="20,0"/>
+            <TextBlock Text="{Binding Feedback}" FontSize="18" Margin="20,0"/>
         </StackPanel>
 
         <!-- First ListView for Call Numbers or Descriptions -->
         <ListView x:Name="leftColumnItems" Grid.Column="0" Grid.Row="1" ItemsSource="{Binding LeftColumnItems}"
-            AllowDrop="True" 
-            PreviewMouseLeftButtonDown="ListView_PreviewMouseLeftButtonDown" 
-            Drop="ListView_Drop" >
+            PreviewMouseLeftButtonDown="ListView_PreviewMouseLeftButtonDown" >
 
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding}" Foreground="Black" />
+                    <!-- Using a Button for each item in the ListView -->
+                    <Button Content="{Binding}" 
+                Background="#E0F7EF" 
+                BorderBrush="Transparent" 
+                BorderThickness="0" 
+                FontFamily="Segoe UI" 
+                FontSize="14"
+                Padding="12"
+                Width="auto" Height="auto" 
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Center">
+                        <!-- Styling the Button to have rounded corners -->
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" 
+                            CornerRadius="10" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
                 </DataTemplate>
             </ListView.ItemTemplate>
+
 
         </ListView>
 
@@ -51,16 +72,38 @@
 
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding}" Foreground="Black" />
+                    <!-- Using a Button for each item in the ListView -->
+                    <Button Content="{Binding}" 
+                Background="#E0F7EF" 
+                BorderBrush="Transparent" 
+                BorderThickness="0" 
+                FontFamily="Segoe UI" 
+                FontSize="14"
+                Width="auto" Height="auto" 
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Center">
+                        <!-- Styling the Button to have rounded corners -->
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" 
+                            CornerRadius="10"
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
                 </DataTemplate>
             </ListView.ItemTemplate>
+
 
         </ListView>
 
         <!-- Buttons at the bottom -->
         <StackPanel Grid.ColumnSpan="2" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
-            <Button Content="Check Answers" Command="{Binding CheckAnswersCommand}" Width="150" Height="40" Margin="10"/>
-            <Button Content="Generate New Question" Command="{Binding GenerateNewQuestionCommand}" Width="150" Height="40" Margin="10"/>
+            <Button Content="Check Answers" Command="{Binding CheckAnswersCommand}"  Background ="#E0F7EF" Style="{StaticResource PrettyButtonStyle}" />
+            <Button Content="Generate New Question" Command="{Binding GenerateNewQuestionCommand}"  Background ="#E0F7EF" Style="{StaticResource PrettyButtonStyle}"/>
         </StackPanel>
 
     </Grid>

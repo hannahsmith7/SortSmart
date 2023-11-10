@@ -3,12 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:SortSmart.ViewModels"
+        xmlns:vm="clr-namespace:SortSmart.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
     <Window.DataContext>
-        <local:MainViewModel />
+        <vm:MainViewModel/>
     </Window.DataContext>
 
 
@@ -33,13 +33,13 @@
             </Grid.ColumnDefinitions>
 
             <!-- Button for Replacing Books -->
-            <Button Content="Replacing Books" Command="{Binding ShowReplacingBooksCommand}" Grid.Column="0" Width="200" Height="50" IsDefault="True"/>
+            <Button Content="Replacing Books" Command="{Binding ShowReplacingBooksCommand}" Grid.Column="0" FontWeight="SemiBold" Style="{StaticResource PrettyButtonStyle}" IsDefault="True"/>
 
             <!-- Button for Identifying Areas -->
-            <Button Content="Identifying Areas" Command="{Binding ShowIdentifyingAreasCommand}" Grid.Column="1" Width="200" Height="50" IsDefault="True"/>
+            <Button Content="Identifying Areas" Command="{Binding ShowIdentifyingAreasCommand}" FontWeight="SemiBold" Grid.Column="1" Style="{StaticResource PrettyButtonStyle}" IsDefault="True"/>
 
             <!-- Button for Finding Call Numbers -->
-            <Button Content="Finding Call Numbers" Grid.Column="2" Width="200" Height="50" IsEnabled="False"/>
+            <Button Content="Finding Call Numbers"  Command="{Binding ShowFindingCallNumbersCommand}" Grid.Column="2" FontWeight="SemiBold" Style="{StaticResource PrettyButtonStyle}" IsDefault="True"/>
 
         </Grid>
 

@@ -8,6 +8,10 @@
         mc:Ignorable="d" 
         d:DesignHeight="450" d:DesignWidth="800">
 
+    <UserControl.Resources>
+        <vm:ReplacingBooksViewModel />
+    </UserControl.Resources>
+
     <UserControl.Background>
         <ImageBrush ImageSource="\Images\PROG_Background.jpg" Opacity="1"/>
     </UserControl.Background>
@@ -21,29 +25,46 @@
              Margin="70"
              HorizontalAlignment="Center"
              VerticalAlignment="Bottom"
-             Width="300"/>
+             Width="300" Background="AntiqueWhite" Panel.ZIndex="100"/>
 
         <!-- ListView to display the call numbers -->
-                <ListView ItemsSource="{Binding CallNumbers}" 
+        <ListView Grid.Column="1" Grid.Row="1" ItemsSource="{Binding CallNumbers}" 
                   Name="CallNumberListView" 
                   PreviewMouseLeftButtonDown="ListView_PreviewMouseLeftButtonDown"
                   Drop="ListView_Drop"
-                  AllowDrop="True" Background="#00000000">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding}"
-                                       FontSize="24" 
-                       Foreground="White" 
-                       TextAlignment="Center" 
-                       Width="200" 
-                       Margin="5"/>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+                  AllowDrop="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <!-- Using a Button for each item in the ListView -->
+                    <Button Content="{Binding}" 
+                            Background="#E0F7EF" 
+                            BorderBrush="Transparent" 
+                            BorderThickness="0" 
+                            FontFamily="Segoe UI" 
+                            FontSize="14"
+                            Width="auto" Height="auto" 
+                            HorizontalAlignment="Stretch" 
+                            VerticalAlignment="Center">
+                        <!-- Styling the Button to have rounded corners -->
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" 
+                                    CornerRadius="20" 
+                                    BorderBrush="{TemplateBinding BorderBrush}" 
+                                    BorderThickness="{TemplateBinding BorderThickness}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
      
             <!-- Two buttons for checking the order and shuffling -->
         <!-- Two buttons for checking the order and shuffling -->
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+            <!-- Check Order Button -->
             <Button Content="Check Order" 
             Command="{Binding CheckOrderCommand}" 
             Width="150" 
@@ -52,20 +73,43 @@
             Background="#2196F3" 
             Foreground="White" 
             BorderBrush="Transparent" 
-            Margin="10"/>
+            Margin="10">
+                <!-- Rounded corners design -->
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                        CornerRadius="25" 
+                        BorderBrush="{TemplateBinding BorderBrush}" 
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <!-- Shuffle Books Button -->
             <Button Content="Shuffle Books" 
             Command="{Binding ShuffleBooksCommand}" 
             Width="150" 
             Height="50" 
             FontSize="18" 
-            Background="#4CAF50" 
+            Background="#2196F3" 
             Foreground="White" 
             BorderBrush="Transparent" 
-            Margin="10"/>
+            Margin="10">
+                <!-- Rounded corners design -->
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                        CornerRadius="25" 
+                        BorderBrush="{TemplateBinding BorderBrush}" 
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
         </StackPanel>
-       
-            
-           
 
     </Grid>
 </UserControl>

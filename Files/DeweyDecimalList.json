@@ -1,0 +1,427 @@
+[
+    {
+        "callNumber": "000",
+        "description": "Computer science, information, and general works",
+        "subcategories": [
+            {
+                "callNumber": "000",
+                "description": "Computer science, knowledge, and systems",
+                "subcategories": [
+                    {"callNumber": "000", "description": "Computer science, information and general works"},
+                    {"callNumber": "001", "description": "Knowledge"},
+                    {"callNumber": "002", "description": "The book"}
+                ]
+            },
+            {
+                "callNumber": "020",
+                "description": "Library and information sciences",
+                "subcategories": [
+                    {"callNumber": "020", "description": "Library and information sciences"},
+                    {"callNumber": "021", "description": "Library relationships (with archives, information centers, etc.)"},
+                    {"callNumber": "022", "description": "Administration of physical plant"}
+                ]
+            },
+            {
+                "callNumber": "050",
+                "description": "Magazines, journals and serials",
+                "subcategories": [
+                    {"callNumber": "050", "description": "General serial publications"},
+                    {"callNumber": "051", "description": "Serials in American English"},
+                    {"callNumber": "052", "description": "Serials in English"},
+                    {"callNumber": "053", "description": "Serials in other Germanic languages"}
+                ]   
+            },
+            {
+                "callNumber": "070",
+                "description": "News media, journalism, and publishing",
+                "subcategories": [
+                    {"callNumber": "070", "description": "News media, journalism, and publishing"},
+                    {"callNumber": "071", "description": "Newspapers in North America"},
+                    {"callNumber": "072", "description": "Newspapers in British Isles; in England"}
+                ]
+            }
+        ]
+    },
+    {
+        "callNumber": "100",
+        "description": "Philosophy and psychology",
+        "subcategories": [
+            {
+                "callNumber": "100",
+                "description": "Philosophy",
+                "subcategories": [
+                    {"callNumber": "100", "description": "Philosophy and psychology"},
+                    {"callNumber": "101", "description": "Theory of philosophy"},
+                    {"callNumber": "102", "description": "Miscellany"}
+                ]
+            },
+            {
+                "callNumber": "120",
+                "description": "Epistemology",
+                "subcategories": [
+                    {"callNumber": "120", "description": "Epistemology, causation, and humankind"},
+                    {"callNumber": "121", "description": "Epistemology (Theory of knowledge)"},
+                    {"callNumber": "122", "description": "Causation"}
+                ]
+            },
+            {
+                "callNumber": "140",
+                "description": "Philosophical schools of thought",
+                "subcategories": [
+                    {"callNumber": "140", "description": "Specific philosophical schools and viewpoints"},
+                    {"callNumber": "141", "description": "Idealism and related systems and doctrines"},
+                    {"callNumber": "142", "description": "Critical philosophy"}
+                ]
+            },
+            {
+                "callNumber": "170",
+                "description": "Ethics",
+                "subcategories": [
+                    {"callNumber": "170", "description": "Ethics (Moral philosophy)"},
+                    {"callNumber": "171", "description": "Ethical systems"},
+                    {"callNumber": "172", "description": "Political ethics"},
+                    {"callNumber": "173", "description": "Ethics of family relationships"},
+                    {"callNumber": "174", "description": "Occupational ethics"}
+                ]
+            }
+        ]
+    },
+    {
+        "callNumber": "200",
+        "description": "Religion",
+        "subcategories": [
+            {
+                "callNumber": "200",
+                "description": "Religion",
+                "subcategories": [
+                    {"callNumber": "200", "description": "Religion"},
+                    {"callNumber": "201", "description": "Religious mythology, general classes of religion, interreligious relations -and attitudes, social theology"},
+                    {"callNumber": "202", "description": "Doctrines"}
+                ]
+            },
+            {
+                "callNumber": "220",
+                "description": "The Bible",
+                "subcategories": [
+                    {"callNumber": "220", "description": "Bible"},
+                    {"callNumber": "221", "description": "Old Testament (Tanakh)"},
+                    {"callNumber": "222", "description": "Historical books of Old Testament"}
+                ]
+            },
+            {
+                "callNumber": "260",
+                "description": "Social and ecclesiastical theology",
+                "subcategories": [
+                    {"callNumber": "260", "description": "Christian social and ecclesiastical theology"},
+                    {"callNumber": "261", "description": "Social theology and interreligious relations and attitudes"},
+                    {"callNumber": "262", "description": "Ecclesiology"},
+                    {"callNumber": "263", "description": "Days, times, places of religious observance"},
+                    {"callNumber": "264", "description": "Public worship"}
+                ]
+            },
+            {
+                "callNumber": "290",
+                "description": "Other religions",
+                "subcategories": [
+                    {"callNumber": "290", "description": "Other religions"},
+                    {"callNumber": "291", "description": "No longer used — formerly Comparative religion"},
+                    {"callNumber": "292", "description": "Classical religion (Greek and Roman religion)"}
+                ]
+            }
+
+        ]
+    },
+    {
+        "callNumber": "300",
+        "description": "Social sciences",
+        "subcategories": [
+            {
+                "callNumber": "300",
+                "description": "Social sciences, sociology, and anthropology",
+                "subcategories": [
+                    {"callNumber": "300", "description": "Social sciences"},
+                    {"callNumber": "301", "description": "Sociology and anthropology"},
+                    {"callNumber": "302", "description": "Social interaction"}
+                ]
+            },
+            {
+                "callNumber": "320",
+                "description": "Political science ",
+                "subcategories": [
+                    {"callNumber": "320", "description": "Political science (Politics and government)"},
+                    {"callNumber": "321", "description": "Systems of governments and states"},
+                    {"callNumber": "322", "description": "Relation of state to organized groups and their members"}
+                ]
+            },
+            {
+                "callNumber": "340",
+                "description": "Law",
+                "subcategories": [
+                    {"callNumber": "340", "description": "Law"},
+                    {"callNumber": "341", "description": "Law of nations"},
+                    {"callNumber": "342", "description": "Constitutional and administrative law"}
+                ]
+            },
+            {
+                "callNumber": "380",
+                "description": "Commerce, communications and transportation",
+                "subcategories": [
+                    {"callNumber": "380", "description": "Commerce, communications and transportation"},
+                    {"callNumber": "381", "description": "Commerce (Trade)"},
+                    {"callNumber": "382", "description": "International commerce (Foreign trade)"},
+                    {"callNumber": "382", "description": "Postal communication"}
+                ]
+            }
+        ]
+    },
+    {
+        "callNumber": "400",
+        "description": "Language",
+        "subcategories": [
+            {
+                "callNumber": "400",
+                "description": "Language",
+                "subcategories": [
+                    {"callNumber": "400", "description": "Language"},
+                    {"callNumber": "401", "description": "Philosophy and theory, international languages"},
+                    {"callNumber": "402", "description": "Miscellany"}
+                ]
+            },
+            {
+                "callNumber": "430",
+                "description": "German and related languages",
+                "subcategories": [
+                    {"callNumber": "430", "description": "German and related languages"},
+                    {"callNumber": "431", "description": "Writing systems, phonology, phonetics of standard German"},
+                    {"callNumber": "432", "description": "Etymology of standard German"}
+                ]
+            },
+            {
+                "callNumber": "460",
+                "description": "Spanish, Portuguese, Galician",
+                "subcategories": [
+                    {"callNumber": "460", "description": "Spanish, Portuguese, Galician"},
+                    {"callNumber": "461", "description": "Writing systems, phonology, phonetics of standard Spanish"},
+                    {"callNumber": "462", "description": "Etymology of standard Spanish"},
+                    {"callNumber": "463", "description": "Dictionaries of standard Spanish"}
+                ]
+            },
+            {
+                "callNumber": "480",
+                "description": "Classical and modern Greek languages",
+                "subcategories": [
+                    {"callNumber": "480", "description": "Classical Greek and related Hellenic languages"},
+                    {"callNumber": "481", "description": "Writing systems, phonology, phonetics of classical Greek"},
+                    {"callNumber": "482", "description": "Etymology of classical Greek"}
+                ]
+            }
+        ]
+    },
+    {
+        "callNumber": "500",
+        "description": "Science",
+        "subcategories": [
+            {
+                "callNumber": "500",
+                "description": "Science",
+                "subcategories": [
+                    {"callNumber": "501", "description": "Natural sciences and mathematics"},
+                    {"callNumber": "502", "description": "Philosophy and theory"},
+                    {"callNumber": "503", "description": "Miscellany"}
+                ]
+            },
+            {
+                "callNumber": "510",
+                "description": "Mathematics",
+                "subcategories": [
+                    {"callNumber": "510", "description": "Mathematics"},
+                    {"callNumber": "511", "description": "General principles of mathematics"},
+                    {"callNumber": "512", "description": "Algebra"}
+                ]
+            },
+            {
+                "callNumber": "540",
+                "description": "Chemistry",
+                "subcategories": [
+                    {"callNumber": "540", "description": "Chemistry and allied sciences"},
+                    {"callNumber": "541", "description": "Physical chemistry"},
+                    {"callNumber": "542", "description": "Techniques, procedures, apparatus, equipment, materials"}
+                ]
+            },
+            {
+                "callNumber": "590",
+                "description": "Animals (Zoology)",
+                "subcategories": [
+                    {"callNumber": "590", "description": "Animals"},
+                    {"callNumber": "591", "description": "Specific topics in natural history of animals"},
+                    {"callNumber": "592", "description": "Invertebrates"},
+                    {"callNumber": "593", "description": "Miscellaneous marine and seashore invertebrates"}
+                ]
+            }
+        ]
+    },
+    {
+        "callNumber": "600",
+        "description": "Technology",
+        "subcategories": [
+            {
+                "callNumber": "600",
+                "description": "Technology",
+                "subcategories": [
+                    {"callNumber": "600", "description": "Technology (Applied sciences)"},
+                    {"callNumber": "600", "description": "Philosophy and theory"},
+                    {"callNumber": "600", "description": "Miscellany"}
+                ]
+            },
+            {
+                "callNumber": "620",
+                "description": "Engineering",
+                "subcategories": [
+                    {"callNumber": "620", "description": "Engineering and applied operations"},
+                    {"callNumber": "621", "description": "Applied physics"},
+                    {"callNumber": "622", "description": "Mining and related operations"}
+                ]
+            },
+            {
+                "callNumber": "670",
+                "description": "Manufacturing",
+                "subcategories": [
+                    {"callNumber": "670", "description": "Manufacturing"},
+                    {"callNumber": "671", "description": "Metalworking processes and primary metal products"},
+                    {"callNumber": "672", "description": "Iron, steel, other iron alloys"}
+                ]
+            },
+            {
+                "callNumber": "690",
+                "description": "Construction of buildings",
+                "subcategories": [
+                    {"callNumber": "690", "description": "Construction of buildings"},
+                    {"callNumber": "691", "description": "Building materials"},
+                    {"callNumber": "692", "description": "Auxiliary construction practices"},
+                    {"callNumber": "693", "description": "Construction in specific types of materials and for specific purposes"},
+                    {"callNumber": "694", "description": "Wood construction"}
+                ]
+            }
+        ]
+    },
+    {
+        "callNumber": "700",
+        "description": "Arts and recreation ",
+        "subcategories": [
+            {
+                "callNumber": "700",
+                "description": "Arts",
+                "subcategories": [
+                    {"callNumber": "700", "description": "The Arts"},
+                    {"callNumber": "701", "description": "Philosophy and theory of fine and decorative arts"},
+                    {"callNumber": "702", "description": "Miscellany of fine and decorative arts"}
+                ]
+            },
+            {
+                "callNumber": "750",
+                "description": "Painting",
+                "subcategories": [
+                    {"callNumber": "750", "description": "Painting and paintings"},
+                    {"callNumber": "751", "description": "Techniques, procedures, apparatus, equipment, materials, forms"},
+                    {"callNumber": "752", "description": "Color"}
+                ]
+            },
+            {
+                "callNumber": "780",
+                "description": "Music",
+                "subcategories": [
+                    {"callNumber": "780", "description": "Music"},
+                    {"callNumber": "781", "description": "General principles and musical forms"},
+                    {"callNumber": "782", "description": "Vocal music"}
+                ]
+            },
+            {
+                "callNumber": "790",
+                "description": "Outline of sports, games and entertainment",
+                "subcategories": [
+                    {"callNumber": "790", "description": "Recreational and performing arts"},
+                    {"callNumber": "791", "description": "Public performances"},
+                    {"callNumber": "792", "description": "Stage presentations"},
+                    {"callNumber": "793", "description": "Indoor games and amusements"}
+                ]
+            }
+        ]
+    },
+    {
+        "callNumber": "800",
+        "description": "Literature",
+        "subcategories": [
+            {
+                "callNumber": "800",
+                "description": "Literature, rhetoric and criticism",
+                "subcategories": [
+                    {"callNumber": "800", "description": "Literature (Belles-lettres) and rhetoric"},
+                    {"callNumber": "801", "description": "Philosophy and theory"},
+                    {"callNumber": "802", "description": "Miscellany"}
+                ]
+            },
+            {
+                "callNumber": "820",
+                "description": "English and Old English literatures",
+                "subcategories": [
+                    {"callNumber": "820", "description": "English and Old English (Anglo-Saxon) literatures "},
+                    {"callNumber": "821", "description": "English Poetry"},
+                    {"callNumber": "822", "description": "English drama"}
+                ]
+            },
+            {
+                "callNumber": "880",
+                "description": "Classical and modern Greek literatures",
+                "subcategories": [
+                    {"callNumber": "880", "description": "Classical Greek literature and literatures of related Hellenic languages"},
+                    {"callNumber": "881", "description": "Classical Greek poetry"},
+                    {"callNumber": "882", "description": "Classical Greek drama"}
+                ]
+            }
+        ]
+    },
+    {
+        "callNumber": "900",
+        "description": "History and geography",
+        "subcategories": [
+            {
+                "callNumber": "900",
+                "description": "History",
+                "subcategories": [
+                    {"callNumber": "900", "description": "History, geography, and auxiliary disciplines"},
+                    {"callNumber": "901", "description": "Philosophy and theory of history"},
+                    {"callNumber": "902", "description": "Miscellany of history"}
+                ]
+            },
+            {
+                "callNumber": "910",
+                "description": "Geography and travel",
+                "subcategories": [
+                    {"callNumber": "910", "description": "Geography and travel"},
+                    {"callNumber": "911", "description": "Historical geography"},
+                    {"callNumber": "912", "description": "Graphic representations of surface of earth and of extraterrestrial worlds"}
+                ]
+            },
+            {
+                "callNumber": "940",
+                "description": "History of Europe",
+                "subcategories": [
+                    {"callNumber": "940", "description": "History of Europe "},
+                    {"callNumber": "941", "description": "British Isles"},
+                    {"callNumber": "942", "description": "England and Wales"}
+                ]
+            },
+            {
+                "callNumber": "980",
+                "description": "History of South America",
+                "subcategories": [
+                    {"callNumber": "980", "description": "History of South America"},
+                    {"callNumber": "981", "description": "Brazil"},
+                    {"callNumber": "982", "description": "Argentina"}
+                ]
+            }
+        ]
+    }
+
+    
+]

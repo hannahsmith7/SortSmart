@@ -206,6 +206,7 @@ namespace SortSmart.ViewModels
             private readonly Action _execute;
             private Func<List<Tuple<string, string>>, int> checkAnswers;
             private Func<string, bool> checkMatch;
+            private Action<object> selectAnswer;
 
 #pragma warning disable CS0067 // The event 'ReplacingBooksViewModel.RelayCommand.CanExecuteChanged' is never used
             public event EventHandler CanExecuteChanged;
@@ -225,6 +226,11 @@ namespace SortSmart.ViewModels
             public RelayCommand(Func<string, bool> checkMatch)
             {
                 this.checkMatch = checkMatch;
+            }
+
+            public RelayCommand(Action<object> selectAnswer)
+            {
+                this.selectAnswer = selectAnswer;
             }
 
             //----------------------------------------------------------------------------------------------------------------------//

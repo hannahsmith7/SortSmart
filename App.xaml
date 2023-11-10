@@ -4,5 +4,49 @@
              xmlns:local="clr-namespace:SortSmart"
              xmlns:vm="clr-namespace:SortSmart.ViewModels"
              xmlns:v="clr-namespace:SortSmart.Views"
+             xmlns:converters="clr-namespace:SortSmart.Converters" xmlns:Converters="http://schemas.microsoft.com/netfx/2009/xaml/presentation"
              StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <DataTemplate DataType="{x:Type vm:ReplacingBooksViewModel}">
+            <v:ReplacingBooksUserControl />
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:IdentifyingAreasViewModel}">
+            <v:IdentifyingAreasUserControl />
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:FindingCallNumbersViewModel}">
+            <v:FindingCallNumbersUserControl />
+        </DataTemplate>
+
+        <Converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        
+
+        <Style x:Key="PrettyButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="LightGreen"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="Padding" Value="15 8"/>
+            <Setter Property="BorderBrush" Value="DarkGreen"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Margin" Value="5"/>
+
+            <!-- Rounded Corners -->
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            CornerRadius="8">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Application.Resources>
+
 </Application>

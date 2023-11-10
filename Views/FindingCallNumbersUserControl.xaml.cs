@@ -14,18 +14,17 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SortSmart
+namespace SortSmart.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for FindingCallNumbersUserControl.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class FindingCallNumbersUserControl : UserControl
     {
-        public MainWindow()
+        public FindingCallNumbersUserControl()
         {
             InitializeComponent();
-            this.DataContext = new MainViewModel();
+            this.DataContext = new FindingCallNumbersViewModel();
         }
-
     }
 }
